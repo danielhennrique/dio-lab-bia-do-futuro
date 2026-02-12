@@ -95,6 +95,8 @@ Nunca promocional
 
 ### Diagrama
 
+<img width="968" height="534" alt="image" src="https://github.com/user-attachments/assets/1fb923a2-5edc-4646-8043-cfef66335f8b" />
+
 ```mermaid
 flowchart TD
     A[Cliente] -->|Mensagem| B[Interface]
