@@ -1,142 +1,188 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+🤖 Agente Financeiro Inteligente com IA Generativa
+🎯 Contexto
 
-## Contexto
+O setor financeiro precisa evoluir de chatbots reativos para agentes inteligentes, proativos e seguros.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Este projeto apresenta um agente financeiro que:
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+Antecipar riscos financeiros
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Personaliza recomendações com base no perfil do cliente
 
----
+Cocriar soluções financeiras consultivas
 
-## O Que Você Deve Entregar
+Evita alucinações e garante respostas confiáveis
 
-### 1. Documentação do Agente
+📦 Entregáveis
+1️⃣ Documentação do Agente
+✅ Caso de Uso
 
-Defina **o que** seu agente faz e **como** ele funciona:
+O agente resolve:
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+Falta de controle de gastos
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+Endividamento excessivo
 
----
+Escolha inadequada de investimentos
 
-### 2. Base de Conhecimento
+Tomada de decisão financeira sem análise
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+Ele atua como um gerente financeiro digital, analisando dados e oferecendo orientação segura.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+✅ Persona e Tom de Voz
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+Consultivo
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+Educativo
 
----
+Profissional
 
-### 3. Prompts do Agente
+Claro e direto
 
-Documente os prompts que definem o comportamento do seu agente:
+Preventivo
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+Nunca promete ganhos e nunca inventa dados.
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+✅ Arquitetura
 
----
+Fluxo:
 
-### 4. Aplicação Funcional
+Cliente → Interface → LLM → Base de Conhecimento → Validação → Resposta
 
-Desenvolva um **protótipo funcional** do seu agente:
+Integra dados de:
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
+transações financeiras
 
-📁 **Pasta:** [`src/`](./src/)
+perfil do investidor
 
----
+histórico de atendimento
 
-### 5. Avaliação e Métricas
+produtos disponíveis
 
-Descreva como você avalia a qualidade do seu agente:
+✅ Segurança
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
+O agente:
 
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+Responde apenas com base nos dados fornecidos
 
----
+Não inventa taxas ou rentabilidades
 
-### 6. Pitch
+Admite quando não possui informação
 
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
+Solicita contexto antes de recomendar
 
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
+Não compartilha dados sensíveis
 
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+📄 docs/01-documentacao-agente.md
 
----
+2️⃣ Base de Conhecimento
 
-## Ferramentas Sugeridas
+Utiliza dados mockados:
 
-Todas as ferramentas abaixo possuem versões gratuitas:
+transacoes.csv → cálculo de gastos
 
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+historico_atendimento.csv → contexto do cliente
 
----
+perfil_investidor.json → definição de suitability
 
-## Estrutura do Repositório
+produtos_financeiros.json → recomendações compatíveis
 
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+Os dados garantem respostas consistentes e seguras.
+
+📄 docs/02-base-conhecimento.md
+
+3️⃣ Prompts do Agente
+System Prompt
+
+Define comportamento ético, restrições e padrão de resposta estruturado:
+
+Diagnóstico → Análise → Risco → Orientação.
+
+Exemplos de Interação
+
+Incluem cenários de:
+
+Consulta de gastos
+
+Recomendação de investimento
+
+Pergunta fora do escopo
+
+Produto inexistente
+
+Edge Cases
+
+O agente:
+
+Recusa perguntas fora de finanças
+
+Não fornece informações sensíveis
+
+Não promete rentabilidade
+
+📄 docs/03-prompts.md
+
+4️⃣ Aplicação Funcional
+
+Protótipo desenvolvido com:
+
+Python
+
+Leitura de CSV/JSON
+
+Chat interativo
+
+Integração com LLM
+
+Permite:
+
+Consultar gastos
+
+Receber recomendações
+
+Validar perfil
+
+Testar cenários reais
+
+📁 src/
+
+5️⃣ Avaliação e Métricas
+
+O agente é avaliado por:
+
+✔ Precisão das respostas
+
+✔ Taxa de respostas seguras (sem alucinação)
+
+✔ Coerência com perfil do cliente
+
+✔ Clareza da explicação
+
+📄 docs/04-metricas.md
+
+6️⃣ Pitch (3 minutos)
+
+Apresenta:
+
+O problema: desorganização e decisões financeiras erradas
+
+A solução: agente consultivo e seguro
+
+O diferencial: IA com controle de escopo e foco em segurança
+
+📄 docs/05-pitch.md
+
+🚀 Diferencial do Projeto
+
+Proativo, não apenas reativo
+
+Baseado em dados reais
+
+Controlado contra alucinação
+
+Foco em segurança financeira
+
+Aplicável a bancos e fintechs
 código python
 
 import csv
@@ -292,10 +338,4 @@ if __name__ == "__main__":
 
 ---
 
-## Dicas Finais
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
