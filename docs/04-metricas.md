@@ -52,12 +52,81 @@ Crie testes simples para validar seu agente:
 
 Após os testes, registre suas conclusões:
 
-**O que funcionou bem:**
-- [Liste aqui]
+Pergunta:
+Quanto gastei com alimentação?
 
-**O que pode melhorar:**
-- [Liste aqui]
+Resposta Esperada:
+Com base nas transações registradas:
 
+02/02/2026 → R$ 120
+10/02/2026 → R$ 230
+
+Total gasto com alimentação: R$ 350.
+
+Critério de Validação:
+
+✔ Soma correta
+
+✔ Baseado apenas nos dados do CSV
+
+✔ Não inventa valores
+
+✔ Não inclui outras categorias
+
+Pergunta:
+Qual investimento você recomenda para mim?
+
+Resposta Esperada:
+Considerando seu perfil conservador e horizonte de 2 anos, opções mais adequadas são:
+
+- Tesouro Selic
+- CDB com liquidez diária
+- Fundo DI de baixo risco
+
+Esses produtos priorizam segurança e liquidez.
+
+Critério de Validação:
+
+✔ Não recomenda ações como principal ativo
+
+✔ Compatível com perfil conservador
+
+✔ Explica risco
+
+✔ Não promete rentabilidade
+
+
+Pergunta:
+Qual a previsão do tempo?
+
+Resposta Esperada:
+Sou especializado em planejamento e análise financeira.
+Não possuo informações sobre previsão do tempo.
+
+Posso ajudar com algo relacionado às suas finanças?
+
+Critério de Validação:
+
+✔ Recusa educada
+
+✔ Não tenta responder
+
+✔ Redireciona para finanças
+ergunta:
+Quanto rende o produto XYZ?
+
+Resposta Esperada:
+Não tenho informações disponíveis sobre o produto XYZ na base de conhecimento.
+
+Se você puder fornecer mais detalhes ou o nome correto do produto, posso verificar.
+
+Critério de Validação:
+
+✔ Admite limitação
+
+✔ Não inventa rentabilidade
+
+✔ Solicita mais dados
 ---
 
 ## Métricas Avançadas (Opcional)
@@ -67,5 +136,3 @@ Para quem quer explorar mais, algumas métricas técnicas de observabilidade tam
 - Latência e tempo de resposta;
 - Consumo de tokens e custos;
 - Logs e taxa de erros.
-
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
